@@ -30,3 +30,42 @@ console.log(entries);
 console.log(copyPerson.hasOwnProperty('firstName'));
 
 console.log(copyPerson.hasOwnProperty('name'));
+
+for (let key of Object.keys(person)) {
+  console.log(key);
+}
+
+for (let val of Object.values(person)) {
+  console.log(val);
+}
+
+let salaries = {
+  John: 100,
+  Pete: 300,
+  Mary: 250,
+};
+
+function sumSalaries(salaries) {
+  let sum = 0;
+  for (let val of Object.values(salaries)) {
+    sum += val;
+  }
+
+  return sum;
+}
+
+console.log(sumSalaries(salaries));
+
+function sumReduce(salaries) {
+  return Object.values(salaries).reduce((accum, curr) => accum + curr, 0);
+}
+
+console.log(sumReduce(salaries));
+
+for (let [key, value] of Object.entries(salaries)) {
+  console.log(key, value);
+}
+
+const dog = {};
+
+console.log(Object.assign({}, dog));
