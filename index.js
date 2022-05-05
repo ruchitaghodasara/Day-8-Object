@@ -28,4 +28,5 @@ console.log(keyValues);
 const entries = Object.entries(copyPerson);
 console.log(entries);
 console.log(copyPerson.hasOwnProperty('firstName'));
+
 console.log(copyPerson.hasOwnProperty('name'));
