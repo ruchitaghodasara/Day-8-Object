@@ -66,6 +66,105 @@ for (let [key, value] of Object.entries(salaries)) {
   console.log(key, value);
 }
 
-const dog = {};
+const dog = {
+  name: 'Whisky',
+  legs: 5,
+  color: 'black',
+  bark: function () {
+    return 'woof woof';
+  },
+};
 
-console.log(Object.assign({}, dog));
+console.log(dog, dog.bark());
+
+for (let value of Object.values(dog)) {
+  console.log(value);
+}
+
+console.log(dog);
+
+dog.breed = 'Lbrador';
+
+dog.getDogInfo = function () {};
+
+console.log(dog);
+const users = {
+  Alex: {
+    email: 'alex@alex.com',
+    skills: ['HTML', 'CSS', 'JavaScript'],
+    age: 20,
+    isLoggedIn: false,
+    points: 30,
+  },
+  Asab: {
+    email: 'asab@asab.com',
+    skills: [
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'Redux',
+      'MongoDB',
+      'Express',
+      'React',
+      'Node',
+    ],
+    age: 25,
+    isLoggedIn: false,
+    points: 50,
+  },
+  Brook: {
+    email: 'daniel@daniel.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux'],
+    age: 30,
+    isLoggedIn: true,
+    points: 50,
+  },
+  Daniel: {
+    email: 'daniel@alex.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'Python'],
+    age: 20,
+    isLoggedIn: false,
+    points: 40,
+  },
+  John: {
+    email: 'john@john.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node.js'],
+    age: 20,
+    isLoggedIn: true,
+    points: 50,
+  },
+  Thomas: {
+    email: 'thomas@thomas.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'React'],
+    age: 20,
+    isLoggedIn: false,
+    points: 40,
+  },
+  Paul: {
+    email: 'paul@paul.com',
+    skills: [
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'MongoDB',
+      'Express',
+      'React',
+      'Node',
+    ],
+    age: 20,
+    isLoggedIn: false,
+    points: 40,
+  },
+};
+let skillLen = [];
+
+// for (const key in users) {
+//   if (users.hasOwnProperty(key)) {
+//     const element = users[key];
+//     console.log(key + ': ', element, element.skills);
+//   }
+// }
+Object.keys(users).forEach((key) => {
+  let maxLen = 0;
+  console.log(key, users[key].skills);
+});
