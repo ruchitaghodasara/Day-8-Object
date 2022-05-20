@@ -88,7 +88,7 @@ dog.breed = 'Lbrador';
 dog.getDogInfo = function () {};
 
 console.log(dog);
-const users = {
+let users = {
   Alex: {
     email: 'alex@alex.com',
     skills: ['HTML', 'CSS', 'JavaScript'],
@@ -164,7 +164,39 @@ let skillLen = [];
 //     console.log(key + ': ', element, element.skills);
 //   }
 // }
-Object.keys(users).forEach((key) => {
-  let maxLen = 0;
-  console.log(key, users[key].skills);
+let maxLen = 0;
+let currLen = 0;
+let userName = '';
+let count = 0;
+let currPoint = 0;
+let countUser = 0;
+Object.keys(users).forEach((key, index) => {
+  currLen = users[key].skills.length;
+
+  if (currLen > maxLen) {
+    maxLen = currLen;
+    userName = key;
+  }
+  if (users[key].isLoggedIn === true) {
+    count++;
+  }
+
+  currPoint = users[key].points;
+
+  if (currPoint >= 50) {
+    countUser++;
+  }
 });
+console.log(userName, count, countUser);
+
+const personAccount = {
+  firstName: 'Ruchita',
+  lastName: 'Rajpara',
+  incomes: 1200000,
+  expenses: {
+    totalIncome: 1200000,
+    totalExpense: 500000,
+    accountInfo: 'HDFC',
+    addIncome: 9000,
+  },
+};
